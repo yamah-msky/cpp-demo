@@ -1,15 +1,11 @@
-# Makefile for building the cpp_demo project
-# using the CMakeLists.txt configuration
-# Usage:
-#   make        Build the cpp_demo executable
-#   make clean  Remove the built executable
+.PHONY: all build run clean
 
 all: build
-	cmake -S . -B build -G Ninja \
-		-DCMAKE_CXX_COMPILER=clang++
-		-DCMAKE_BUILD_TYPE=Debug
-	
+
 build:
+	cmake -S . -B build -G Ninja \
+		-DCMAKE_CXX_COMPILER=clang++ \
+		-DCMAKE_BUILD_TYPE=Debug
 	cmake --build build
 
 run:
