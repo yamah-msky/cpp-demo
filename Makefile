@@ -4,11 +4,12 @@
 #   make        Build the cpp_demo executable
 #   make clean  Remove the built executable
 
-all:
+all: build
 	cmake -S . -B build -G Ninja \
 		-DCMAKE_CXX_COMPILER=clang++
 		-DCMAKE_BUILD_TYPE=Debug
 	
+build:
 	cmake --build build
 
 run:
